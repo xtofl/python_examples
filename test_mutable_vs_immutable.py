@@ -16,7 +16,7 @@ Can you spot the error?
 """
 import pytest
 
-def tree_of_lists(n):
+def triangle_of_lists(n):
     result = []
     line = []
     for i in range(n):
@@ -24,7 +24,7 @@ def tree_of_lists(n):
         line.append(i)
     return result
 
-def tree_of_tuples(n):
+def triangle_of_tuples(n):
     result = tuple()
     line = tuple()
     for i in range(n):
@@ -34,8 +34,8 @@ def tree_of_tuples(n):
 
 @pytest.mark.xfail
 def test_lists():
-    assert tree_of_lists(3) == [[], [0], [0, 1]]
+    assert triangle_of_lists(3) == [[], [0], [0, 1]]
 
 def test_tuples():
-    assert tree_of_tuples(3) == (tuple(), (0,), (0, 1))
+    assert triangle_of_tuples(3) == (tuple(), (0,), (0, 1))
 
