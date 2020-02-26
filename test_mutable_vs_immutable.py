@@ -14,6 +14,7 @@ the test with tuples succeeds.
 
 Can you spot the error?
 """
+import pytest
 
 def tree_of_lists(n):
     result = []
@@ -31,6 +32,7 @@ def tree_of_tuples(n):
         line = line + (i,)
     return result
 
+@pytest.mark.xfail
 def test_lists():
     assert tree_of_lists(3) == [[], [0], [0, 1]]
 
